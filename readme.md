@@ -39,3 +39,14 @@ I orginally started this project with many more preprocessing steps than I use n
 * add max or average pooling after ever convolutional layer
 * figure out best starting approach for "fine tuning" model at this point, because I don't think more data collection is necessaryS.
 
+#### Response to Feedback
+10 Example images from the data set have been include in the output_images directory. I've also saved the jupyter notebook as html so that you may view the sample images along with their respective angles.
+
+A histogram of the collected data has now been included in the jupyter notebook. Note this dataset was large and 0 angles were not filtered out. Upon initial inspection I noticed that I could not even see the non-zero angle in the original histogram, so then I plotted it on a log scale. You can see that there are 400x more 0 angle images than non-zero angle images! This mean the training data was not well balanced. This also might explain why my car did not perform well on track two. 
+
+The network  is clearly biased towards zero. If I had more time, I would balance the dataset better and then retrain the model without changing anything else to see if the car drives better on track 1 and track 2 with balanced training data.
+
+Furthermore, from the histogram, we can also see that there are more negative counts than positive counts. This was easily balanced in the training pipeline by randomly flipping the images. 
+
+
+
